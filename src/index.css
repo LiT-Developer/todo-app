@@ -1,0 +1,208 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f5f5f5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 230px;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.app {
+  background: #fff;
+  margin: 130px 0 40px 0;
+  position: relative;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+              0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  position: absolute;
+  top: -140px;
+  width: 100%;
+  font-size: 80px;
+  font-weight: 200;
+  text-align: center;
+  color: rgba(175, 47, 47, 0.15);
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+
+.todo-input-wrapper {
+  position: relative;
+}
+
+.todo-input-wrapper::before {
+  content: '❯';
+  position: absolute;
+  top: 15px;
+  left: 12px;
+  width: 40px;
+  height: 40px;
+  color: #e6e6e6;
+  font-size: 24px;
+  transform: rotate(90deg);
+}
+
+.todo-input {
+  position: relative;
+  width: 100%;
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: 300;
+  line-height: 1.4em;
+  color: #4d4d4d;
+  padding: 16px 16px 16px 60px;
+  border: none;
+  background: rgba(0, 0, 0, 0.003);
+  box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+  box-sizing: border-box;
+}
+
+.todo-input::placeholder {
+  font-style: italic;
+  font-weight: 300;
+  color: #e6e6e6;
+}
+
+.todo-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.todo-list li {
+  position: relative;
+  font-size: 24px;
+  border-bottom: 1px solid #ededed;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.todo-list li:last-child {
+  border-bottom: none;
+}
+
+.todo-list li input[type="checkbox"] {
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  border: none;
+  -webkit-appearance: none;
+  appearance: none;
+  margin-left: 12px;
+}
+
+.todo-list li input[type="checkbox"]:before {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  top: 6px;
+  left: 6px;
+  border: 1px solid #ededed;
+  border-radius: 50%;
+  background: none;
+}
+
+.todo-list li input[type="checkbox"]:checked:after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -10 40 40"><path fill="none" stroke="%235dc2af" stroke-width="2" d="M1 9l7 7 14-14"/></svg>');
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.todo-list li span {
+  word-break: break-all;
+  padding: 15px 15px 15px 60px;
+  display: block;
+  line-height: 1.2;
+  transition: color 0.4s;
+  font-weight: 300;
+  color: #4d4d4d;
+}
+
+.todo-list li.completed span {
+  color: #d9d9d9;
+  text-decoration: line-through;
+}
+
+.todo-filters {
+  color: #777;
+  padding: 10px 15px;
+  height: 20px;
+  text-align: center;
+  border-top: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-filters:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  overflow: hidden;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+              0 8px 0 -3px #f6f6f6,
+              0 9px 1px -3px rgba(0, 0, 0, 0.2),
+              0 16px 0 -6px #f6f6f6,
+              0 17px 2px -6px rgba(0, 0, 0, 0.2);
+}
+
+.filters {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.filters button {
+  color: inherit;
+  margin: 3px;
+  padding: 3px 7px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  background: none;
+  font-size: 14px;
+}
+
+.filters button:hover {
+  border-color: rgba(175, 47, 47, 0.1);
+}
+
+.filters button.active {
+  border-color: rgba(175, 47, 47, 0.2);
+}
+
+.todo-filters > button {
+  position: relative;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.todo-filters > button:hover {
+  text-decoration: underline;
+}
+
+.todo-filters > span {
+  position: relative;
+  font-size: 14px;
+}
